@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: devfile-sample-code-with-quarkus-wcgp
+  namespace: l66u8sbn-tenant
+spec:
+  replicas: 2
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/hacdev/build_service@sha256:fd2368efb36750f247b17a1821726c4e497dcaaf3882e64f675b6005f382f1da
+        name: my-java-quarkus
+        resources: {}
+status: {}
