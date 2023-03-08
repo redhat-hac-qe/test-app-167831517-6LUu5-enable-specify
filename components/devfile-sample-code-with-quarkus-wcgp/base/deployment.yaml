@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: devfile-sample-code-with-quarkus-wcgp
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: devfile-sample-code-with-quarkus-wcgp
+    app.kubernetes.io/part-of: test-app-167831517
+  name: devfile-sample-code-with-quarkus-wcgp
+  namespace: l66u8sbn-tenant
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: java-quarkus-app
+      app.kubernetes.io/instance: devfile-sample-code-with-quarkus-wcgp
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: java-quarkus-app
+        app.kubernetes.io/instance: devfile-sample-code-with-quarkus-wcgp
+    spec:
+      containers:
+      - env:
+        - name: secondEnvVar
+          value: "3000"
+        image: quay.io/hacdev/build_service:6LUu5-devfile-sample-code-with-quarkus-wcgp
+        name: my-java-quarkus
+        ports:
+        - containerPort: 8081
+          name: http
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 100m
+            memory: 250Mi
+          requests:
+            cpu: 11m
+            memory: 1Gi
+status: {}
