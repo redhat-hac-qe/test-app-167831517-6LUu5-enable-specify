@@ -28,7 +28,7 @@ spec:
       - env:
         - name: secondEnvVar
           value: "3000"
-        image: quay.io/hacdev/build_service:6LUu5-devfile-sample-code-with-quarkus-wcgp
+        image: quay.io/hacdev/build_service@sha256:fd2368efb36750f247b17a1821726c4e497dcaaf3882e64f675b6005f382f1da
         name: my-java-quarkus
         ports:
         - containerPort: 8081
